@@ -14,9 +14,9 @@ import org.apache.camel.spi.PackageScanClassResolver;
 
 public class CamelHelloWorldExample {
 	public static void main(String[] args) throws Exception{
-		//PackageScanClassResolver eclipseResolver = new EclipsePackageScanClassResolver();
+		PackageScanClassResolver eclipseResolver = new EclipsePackageScanClassResolver();
 		CamelContext context = new DefaultCamelContext();
-		//context.setPackageScanClassResolver(eclipseResolver);
+		context.setPackageScanClassResolver(eclipseResolver);
 		
 		try{
 			ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("vm://localhost?broker.persistent=false");
